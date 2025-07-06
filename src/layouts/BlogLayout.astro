@@ -1,0 +1,46 @@
+---
+// BlogLayout.astro
+const { title, description, pubDate, author } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0 auto;
+        max-width: 720px;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      h1, h2, h3 {
+        color: #2d2d2d;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td, th {
+        border: 1px solid #ccc;
+        padding: 8px;
+      }
+      code {
+        background-color: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <h1>{title}</h1>
+      <p><strong>Published:</strong> {pubDate}</p>
+      <slot />
+    </article>
+  </body>
+</html>

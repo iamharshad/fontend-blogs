@@ -1,5 +1,6 @@
 ---
 title: "SSR vs SSG and the Rise of Disappearing Frameworks in 2025"
+layout: ../../layouts/BlogLayout.astro
 pubDate: 2025-07-06
 description: "Astro, Qwik, and the new wave of frontend frameworks are changing how we think about rendering. Here's what modern developers need to know."
 author: "Harshad Prajapati"
