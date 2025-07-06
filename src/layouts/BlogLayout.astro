@@ -116,7 +116,7 @@ const schemaData = {
           <slot />
         </article>
         {
-          tags.length > 0 && (
+          tags?.length > 0 && (
             <div class="mt-12 flex flex-wrap gap-2 text-sm text-gray-600">
               {tags.map((tag: any) => (
                 <span class="px-2 py-1 bg-gray-100 rounded-md">#{tag}</span>
