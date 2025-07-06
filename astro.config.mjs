@@ -13,8 +13,8 @@ export default defineConfig({
   site: 'https://iamharshad.github.io/fontend-blogs', // ✅ Required for sitemap
 
   vite: {
-    plugins: [tailwindcss(), sitemap()],
+    plugins: [tailwindcss()],
   },
 
-  integrations: [sitemap()],
+  integrations: [sitemap(),],
 });
