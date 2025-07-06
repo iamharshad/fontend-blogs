@@ -9,12 +9,12 @@ export default defineConfig({
   output: "static",
 
   // This must match your repo name
-  base: "/fontend-blogs/",
+  base: "/fontend-blogs",
 
   vite: {
     plugins: [tailwindcss()],
   },
-  
+
   site: "https://iamharshad.github.io/fontend-blogs", // ✅ Required for sitemap
 
   integrations: [sitemap()],
