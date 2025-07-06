@@ -10,11 +10,8 @@ export default defineConfig({
 
   // This must match your repo name
   base: "/fontend-blogs/",
-  site: 'https://iamharshad.github.io/fontend-blogs', // ✅ Required for sitemap
+  
+  site: "https://iamharshad.github.io/fontend-blogs", // ✅ Required for sitemap
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
-
-  integrations: [sitemap(),],
+  integrations: [sitemap()],
 });
