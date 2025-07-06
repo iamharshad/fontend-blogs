@@ -5,6 +5,30 @@ import "../styles/global.css";
 const { content } = Astro.props;
 
 const { title, pubDate, description, author } = content;
+
+// Generate full canonical URL dynamically
+// Dynamically build full URL
+const fullUrl = new URL(Astro.url.pathname, Astro.site);
+// ✅ Define JSON-LD schema as a JS object
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: description,
+  author: {
+    "@type": "Person",
+    name: author,
+  },
+  datePublished: pubDate,
+  publisher: {
+    "@type": "Organization",
+    name: author,
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": fullUrl.href,
+  },
+};
 ---
 
 <html lang="en">
@@ -12,6 +36,10 @@ const { title, pubDate, description, author } = content;
     <meta charset="UTF-8" />
     <title>{title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="rXS8COqwj4vmJkMQrCa-jYOABxEQjY5uZf3nBn_iOGU"
+    />
 
     <!-- ✅ Basic Meta -->
     <meta name="description" content={description} />
@@ -56,6 +84,7 @@ const { title, pubDate, description, author } = content;
       href={`https://iamharshad.github.io/fontend-blogs/`}
     />
 
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
   </head>
 
   <body
