@@ -1,6 +1,7 @@
 import rss from '@astrojs/rss';
+export { renderers } from '../renderers.mjs';
 
-export const GET = () => {
+const GET = () => {
   const posts = [
     {
       title: 'SSR vs SSG and the Rise of Disappearing Frameworks in 2025',
@@ -37,3 +38,12 @@ export const GET = () => {
     })),
   });
 };
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  GET
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

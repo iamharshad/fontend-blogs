@@ -4,7 +4,7 @@ import "../styles/global.css";
 // If rendered from .md file, Astro.props.content.frontmatter holds values
 const { content } = Astro.props;
 
-const { title, pubDate, description, author } = content;
+const { title, pubDate, description, author, tags } = content;
 
 // Generate full canonical URL dynamically
 // Dynamically build full URL
@@ -29,7 +29,6 @@ const schemaData = {
     "@id": fullUrl.href,
   },
 };
-
 ---
 
 <html lang="en">
@@ -86,7 +85,6 @@ const schemaData = {
     />
 
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
-
   </head>
 
   <body
@@ -117,6 +115,15 @@ const schemaData = {
         <article class="max-w-none">
           <slot />
         </article>
+        {
+          tags.length > 0 && (
+            <div class="mt-12 flex flex-wrap gap-2 text-sm text-gray-600">
+              {tags.map((tag: any) => (
+                <span class="px-2 py-1 bg-gray-100 rounded-md">#{tag}</span>
+              ))}
+            </div>
+          )
+        }
         <!-- Contact Box -->
         <footer class="mt-12 pt-6">
           <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
