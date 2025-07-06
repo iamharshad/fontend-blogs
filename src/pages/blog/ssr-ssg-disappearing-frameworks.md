@@ -1,74 +1,87 @@
 ---
 title: "SSR vs SSG and the Rise of Disappearing Frameworks in 2025"
-layout: ../../layouts/BlogLayout.astro
-pubDate: 2025-07-06
+pubDate: "2025-07-06"
 description: "Astro, Qwik, and the new wave of frontend frameworks are changing how we think about rendering. Here's what modern developers need to know."
 author: "Harshad Prajapati"
----
-
-When I first heard the term **“disappearing frameworks”**, I paused. Was this another buzzword? Or something real?
-
-Turns out — it’s very real. And it’s reshaping how we build frontend applications in 2025.
+layout: ../../layouts/BlogLayout.astro
 
 ---
 
-## 🔁 SSR vs SSG: A Quick Refresher
+When I first heard the term **“disappearing frameworks”**, I’ll admit — I rolled my eyes. Another flashy term for the same old thing?
 
-- **SSR (Server-Side Rendering)**: Your pages are rendered on-the-fly when users request them.
-- **SSG (Static Site Generation)**: Pages are pre-built during the build step — super fast at runtime.
-- **ISR (Incremental Static Regeneration)**: Mix of both — used by frameworks like Next.js.
-
-In 2020, this was the hot debate. But fast-forward to today...
+But this one? It's actually a game-changer.
 
 ---
 
-## 🚀 Enter “Disappearing Frameworks”
+## 🔁 SSR vs SSG: The Refresher You Didn’t Ask For (but Need)
 
-Frameworks like **Astro** and **Qwik** are turning heads because they:
-- Ship almost **no JavaScript** to the browser by default
-- Use **island architecture** (hydrate only interactive parts)
-- Or **resume** the app state instead of reloading it (Qwik’s approach)
+Let’s rewind real quick:
 
-This is what we mean by “disappearing” — they fade out of the way after build, leaving you with fast, minimal pages.
+- **SSR (Server-Side Rendering)**: The server builds the page every time someone visits. Great for dynamic stuff, not so much for speed.
+- **SSG (Static Site Generation)**: The pages are pre-built when you deploy. Super fast, but not great if your content changes often.
+- **ISR (Incremental Static Regeneration)**: A happy mix — pre-build most of it, re-build parts when needed. Next.js popularized this.
+
+A few years ago, that was the whole frontend rendering debate.
+
+But now? Things are shifting in a whole new direction.
 
 ---
 
-## ⚔️ Framework Showdown
+## 🚀 Enter the “Disappearing” Frameworks
+
+Frameworks like **Astro** and **Qwik** are flipping the script. They’re not trying to just *optimize* what’s already there — they’re rethinking the whole idea.
+
+These frameworks:
+
+- Ship **almost no JavaScript** by default
+- Only hydrate the parts that need interactivity (aka **island architecture**)
+- Or even better: **resume app state** instantly on load (Qwik’s thing)
+
+That’s what we mean by “disappearing” — the framework just fades out of the way after build time. Your user is left with fast, minimal, and SEO-friendly HTML.
+
+It’s not magic. It’s smart design.
+
+---
+
+## ⚔️ Framework Showdown: Astro vs Qwik vs Next.js
+
+Let’s be honest — no one tool wins at everything. But here’s a side-by-side comparison that might help:
 
 | Feature            | Astro            | Qwik             | Next.js (App Router) |
 |--------------------|------------------|------------------|-----------------------|
 | Default Strategy   | SSG              | Resumability     | SSR / ISR / RSC       |
-| JS by default      | 0 KB (HTML only) | Lazy resume      | Depends (RSC helps)   |
-| Ideal Use          | Blogs, Docs      | High perf apps   | Full-stack apps       |
+| JS by default      | 0 KB             | Lazy resume      | Depends               |
+| Ideal For          | Blogs, Docs      | Dashboards       | Full-stack Apps       |
 | Learning Curve     | Low              | Medium–High      | Medium                |
 
----
-
-## 🧪 Real Dev Use Case
-
-I recently tested Astro vs Qwik for a simple marketing site:
-- **Astro** loaded in ~0.8s with no JS
-- **Qwik** resumed instantly, even with interactivity
-- **Next.js** (without tuning) felt heavier on cold loads
-
-Does that mean Next.js is dead? No. But it’s time to rethink **where** we use what.
+Astro is simple and snappy.  
+Qwik is ambitious and futuristic.  
+Next.js is the powerhouse — but it's heavier and more complex.
 
 ---
 
-## 🧠 Final Thoughts
+## 🧪 What I Tried (Real Project Notes)
 
-2025 is not about “which is better.”
+I did a fun experiment while building a small landing page for one of my side projects:
 
-It’s about **choosing the right rendering strategy per route**:
-- Use **Astro** for blogs/docs/static content
-- Use **Qwik** for interactive dashboards or widgets
-- Use **Next.js** if you need full-stack + flexibility
+- **Astro** loaded in ~0.8s with 0 JS. Wild.
+- **Qwik** resumed instantly, even with some interactivity like tabs and modals.
+- **Next.js**? Solid, but felt heavier and slower on the first load — especially without fine-tuning.
 
----
-
-If you're a frontend dev looking to **speed up your site**, reduce JS, and adopt modern techniques — now's the best time to explore Astro and Qwik.
-
-Let me know what you're building — or what framework surprised you most 👇
+I’m not ditching Next.js (yet). But I’m definitely rethinking when to use it.
 
 ---
 
+## 🧠 TL;DR — What It Means for Us Devs
+
+2025 isn’t about picking *one* frontend strategy. It’s about using the right tool for the job:
+
+- Want lightning-fast blogs/docs? → Go **Astro**
+- Need rich interactivity with minimal load? → Try **Qwik**
+- Building full-stack dashboards or marketing sites? → Stick with **Next.js**
+
+Frontend isn't one-size-fits-all anymore. And honestly? That’s a good thing.
+
+---
+
+See you in the disappearing future 🪄

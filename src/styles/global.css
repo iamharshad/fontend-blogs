@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Custom prose overrides */
+@layer components {
+  .prose table {
+    @apply w-full table-auto border-collapse text-sm my-6;
+  }
+  .prose thead th {
+    @apply bg-gray-100 px-4 py-2 text-left font-semibold border-b border-gray-300;
+  }
+  .prose tbody td {
+    @apply px-4 py-2 border-b border-gray-200;
+  }
+  .prose tbody tr:nth-child(even) {
+    @apply bg-gray-50;
+  }
+
+  /* Override <hr> styles */
+  .prose hr {
+    @apply border-none h-[2px] my-10 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 rounded-full;
+  }
+}

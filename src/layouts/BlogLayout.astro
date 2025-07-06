@@ -1,46 +1,109 @@
 ---
-// BlogLayout.astro
-const { title, description, pubDate, author } = Astro.props;
+import "../styles/global.css";
+
+// If rendered from .md file, Astro.props.content.frontmatter holds values
+const { content } = Astro.props;
+
+const { title, pubDate, description, author } = content;
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ Basic Meta -->
     <meta name="description" content={description} />
     <meta name="author" content={author} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      body {
-        font-family: system-ui, sans-serif;
-        margin: 0 auto;
-        max-width: 720px;
-        padding: 2rem;
-        line-height: 1.6;
-      }
-      h1, h2, h3 {
-        color: #2d2d2d;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      td, th {
-        border: 1px solid #ccc;
-        padding: 8px;
-      }
-      code {
-        background-color: #f4f4f4;
-        padding: 2px 4px;
-        border-radius: 4px;
-      }
-    </style>
+    <meta name="robots" content="index, follow" />
+
+    <!-- ✅ Open Graph for Social Sharing -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content={`https://iamharshad.github.io/fontend-blogs/`}
+    />
+    <!-- Optional: Add image -->
+    <!-- <meta property="og:image" content="/images/cover.jpg" /> -->
+
+    <!-- ✅ Twitter Cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:creator" content="@yourhandle" />
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- ✅ Font preload for better speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ✅ Canonical URL -->
+    <link
+      rel="canonical"
+      href={`https://iamharshad.github.io/fontend-blogs/`}
+    />
+
   </head>
-  <body>
-    <article>
-      <h1>{title}</h1>
-      <p><strong>Published:</strong> {pubDate}</p>
-      <slot />
-    </article>
+
+  <body
+    class="bg-gray-100 text-gray-800 font-[Inter] leading-relaxed tracking-tight"
+  >
+    <main
+      class="min-h-screen flex items-center justify-center px-4 py-12 prose prose-slate"
+    >
+      <div
+        class="bg-white shadow-lg rounded-xl w-full max-w-3xl p-8 md:p-10 border border-gray-200"
+      >
+        <!-- Blog Header -->
+        <header class="mb-8">
+          <h1
+            class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight"
+          >
+            {title}
+          </h1>
+          <div class="text-sm text-gray-500 mt-2">
+            <span>🗓 {pubDate || "Unknown Date"}</span>
+            <span class="mx-2">•</span>
+            <span>✍️ {author || "Unknown Author"}</span>
+          </div>
+          <p class="text-base text-gray-600 mt-3">{description}</p>
+        </header>
+
+        <!-- Blog Content -->
+        <article class="max-w-none">
+          <slot />
+        </article>
+        <!-- Contact Box -->
+        <footer class="mt-12 pt-6">
+          <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">
+              📬 Like this post?
+            </h2>
+            <p class="text-sm text-gray-600 mb-4">
+              Reach out for collaboration, feedback, or questions!
+            </p>
+            <a
+              href="mailto:iamharshad.prajapati@gmail.com"
+              class="inline-block bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded hover:bg-blue-700 transition"
+            >
+              ✉️ Email Me
+            </a>
+          </div>
+        </footer>
+      </div>
+    </main>
   </body>
 </html>
