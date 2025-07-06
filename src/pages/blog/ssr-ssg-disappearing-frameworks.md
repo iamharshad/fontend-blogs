@@ -1,11 +1,11 @@
 ---
-title: "SSR vs SSG and the Rise of Disappearing Frameworks in 2025"
-pubDate: "2025-07-06"
-description: "Astro, Qwik, and the new wave of frontend frameworks are changing how we think about rendering. Here's what modern developers need to know."
+title: "Salary Trends for Senior Software Engineers in Karnataka: What to Expect in 2025"
+pubDate: "2025-07-07"
+description: "Explore the latest salary trends, insights, and what Senior Software Engineers can expect in Karnataka's booming tech market in 2025."
 author: "Harshad Prajapati"
 layout: ../../layouts/BlogLayout.astro
-
 ---
+
 
 When I first heard the term **“disappearing frameworks”**, I’ll admit — I rolled my eyes. Another flashy term for the same old thing?
 

@@ -9,7 +9,13 @@ export const GET = () => {
       pubDate: new Date('2025-07-06'),
       slug: 'ssr-ssg-disappearing-frameworks',
     },
-    // Add more blog entries manually here...
+    {
+      title: 'Salary Trends for Senior Software Engineers in Karnataka: What to Expect in 2025',
+      description:
+      'Explore the latest salary trends, insights, and what Senior Software Engineers can expect in Karnataka\'s booming tech market in 2025.',
+      pubDate: new Date('2025-07-07'),
+      slug: 'karnataka-senior-software-engineer-salary-guide',
+    }
   ];
 
   return rss({
