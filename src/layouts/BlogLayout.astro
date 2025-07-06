@@ -30,7 +30,6 @@ const schemaData = {
   },
 };
 
-const GA_ID = "G-YWYM8FBTRX"; // replace with your ID
 ---
 
 <html lang="en">
@@ -87,18 +86,7 @@ const GA_ID = "G-YWYM8FBTRX"; // replace with your ID
     />
 
     <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YWYM8FBTRX"
-    ></script>
-    <script lang="ts">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-YWYM8FBTRX");
-    </script>
   </head>
 
   <body
