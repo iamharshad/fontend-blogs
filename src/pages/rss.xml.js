@@ -20,7 +20,7 @@ export const GET = () => {
       title: post.title,
       description: post.description,
       pubDate: post.pubDate,
-      link: `/blog/${post.slug}`,
+      link: `/fontend-blogs/blog/${post.slug}`,
     })),
   });
 };
