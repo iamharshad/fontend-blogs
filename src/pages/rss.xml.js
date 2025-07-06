@@ -1,19 +1,26 @@
-// src/pages/rss.xml.js
-import rss from '@astrojs/rss'
-import { getCollection } from 'astro:content'
+import rss from '@astrojs/rss';
 
-export async function GET() {
-  const posts = await getCollection('blog')
+export const GET = () => {
+  const posts = [
+    {
+      title: 'SSR vs SSG and the Rise of Disappearing Frameworks in 2025',
+      description:
+        'Astro, Qwik, and the new wave of frontend frameworks are changing how we think about rendering. Here\'s what modern developers need to know.',
+      pubDate: new Date('2025-07-06'),
+      slug: 'ssr-ssg-disappearing-frameworks',
+    },
+    // Add more blog entries manually here...
+  ];
 
   return rss({
     title: 'Frontend Blogs by Harshad',
     description: 'Stay updated on modern frontend frameworks and tools.',
     site: 'https://iamharshad.github.io/fontend-blogs',
     items: posts.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.pubDate,
-      description: post.data.description,
-      link: `/blog/${post.slug}/`,
+      title: post.title,
+      description: post.description,
+      pubDate: post.pubDate,
+      link: `/blog/${post.slug}`,
     })),
-  })
-}
+  });
+};
