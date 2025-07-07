@@ -1,7 +1,7 @@
 ---
-title: "Salary Trends for Senior Software Engineers in Karnataka: What to Expect in 2025"
+title: "The Rise of Disappearing Frameworks: Astro, Qwik & the Future of Frontend in 2025"
 pubDate: "2025-07-07"
-description: "Explore the latest salary trends, insights, and what Senior Software Engineers can expect in Karnataka's booming tech market in 2025."
+description: "Explore how modern frontend frameworks like Astro and Qwik are redefining performance, interactivity, and rendering strategies in 2025."
 author: "Harshad Prajapati"
 layout: ../../layouts/BlogLayout.astro
 ---
